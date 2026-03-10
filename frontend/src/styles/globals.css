@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800&display=swap');
+
+:root {
+  /* Colors - Space Gray / Obsidian Refined */
+  --bg-color: #0c0c0e;
+  --bg-app: radial-gradient(circle at 50% 100%, #1c1c1f 0%, #0c0c0e 100%);
+
+  --accent-primary: #3b82f6;
+  /* More industrial Blue-Silver */
+  --accent-secondary: #64748b;
+  /* Slate Gray */
+  --accent-glow: rgba(59, 130, 246, 0.2);
+
+  --text-main: #f1f1f3;
+  --text-muted: #9ca3af;
+  --text-dim: #4b5563;
+
+  /* Refined Glassmorphism - Darker, subtler */
+  --glass-bg: rgba(22, 22, 26, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.04);
+  --glass-blur: blur(20px);
+
+  /* Gradients - Professional & Muted */
+  --grad-premium: linear-gradient(135deg, #2d2d30 0%, #1c1c1e 100%);
+  --grad-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+
+  /* Border Radius - Sharper */
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-inner: 6px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-color);
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+.font-heading {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Glass card utility */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-premium {
+  background: var(--grad-premium);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 20px;
+  border-radius: var(--radius-btn);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-premium:hover {
+  background: #2d2d30;
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
+}
+
+.btn-premium:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+/* Accent variant for primary actions */
+.btn-accent {
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radius-btn);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-accent:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-premium {
+  animation: fadeInScale 0.4s ease-out forwards;
+}
