@@ -17,7 +17,7 @@
 
   /* Refined Glassmorphism - Darker, subtler */
   --glass-bg: rgba(22, 22, 26, 0.85);
-  --glass-border: rgba(255, 255, 255, 0.04);
+  --glass-border: #ececec2e;
   --glass-blur: blur(20px);
 
   /* Gradients - Professional & Muted */
