@@ -1,6 +1,6 @@
 # 🧩 web3-corekit
 
-The **copy-paste template** for Web3 auth and crypto payments/subscriptions.  
+The **copy-paste template** for Web3 auth and crypto payments.  
 A modular Corekit with isolated, one-file modules for both **Frontend (Next.js)** and **Backend (FastAPI)**.
 
 ![Dashboard Preview](images/screen.png)
@@ -10,7 +10,7 @@ A modular Corekit with isolated, one-file modules for both **Frontend (Next.js)*
 Building Web3 features from scratch is repetitive. This is a ready-to-use template where core features are isolated into independent modules. **Just copy the file you need and you're live.**
 
 - 🔐 **SIWE Auth**: Standard Sign-In with Ethereum. Setup your Project ID in the [Reown Dashboard](https://dashboard.reown.com/).
-- 💳 **Payments**: Automated crypto subscriptions and one-off invoices.
+- 💳 **Payments**: One-time crypto payments and invoices with database-tracked status.
 - ⟠ **Balance Check**: Production-ready ETH network balance verification.
 
 ## 💎 Holders Plan (Token-Gating)
@@ -24,7 +24,7 @@ The toolkit supports **Token-Gated Access**. Instead of paying, users can unlock
 | # | Backend | Frontend | What it does |
 |---|---------|----------|-------------|
 | 1 | `modules/auth.py` | `AuthModule.tsx` | SIWE wallet auth (Reown/WalletConnect) |
-| 2 | `modules/crypto_payment.py` | `CryptoPaymentModule.tsx` | Crypto subscriptions + plans |
+| 2 | `modules/crypto_payment.py` | `CryptoPaymentModule.tsx` | One-time crypto payments + plans |
 | 3 | `modules/balance_check.py` | `BalanceCheckModule.tsx` | ERC-20 token balance via Alchemy |
 
 Auth is shared — modules 2 & 3 import `require_auth` from it.

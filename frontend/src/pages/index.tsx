@@ -46,7 +46,7 @@ function DemoPage() {
                         fontWeight: 300,
                     }} className="animate-space-gray">
                         The copy-paste template for Web3 auth and crypto payments. <br />
-                        Isolated modules for Frontend and Backend.
+                        Isolated modules for frontend and backend integration.
                     </p>
                 </header>
 
