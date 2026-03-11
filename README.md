@@ -2,6 +2,9 @@
 
 Modular Web3 backend + frontend toolkit. Each module is **one file** — use any combination.
 
+![Dashboard Preview](images/screen.png)
+![Mobile Preview](images/screen2.png)
+
 ## Modules
 
 | # | Backend | Frontend | What it does |
