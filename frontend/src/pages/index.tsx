@@ -25,23 +25,27 @@ function DemoPage() {
                 <header style={{ textAlign: "center" }}>
                     <h1 style={{
                         color: "var(--text-main)",
-                        fontSize: "3rem",
-                        fontWeight: 800,
-                        marginBottom: "0.75rem",
-                        letterSpacing: "-0.04em",
+                        fontSize: "3.2rem",
+                        fontWeight: 900,
+                        marginBottom: "0.5rem",
+                        letterSpacing: "-0.05em",
+                        background: "linear-gradient(to bottom, #fff 40%, var(--text-muted) 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
                     }} className="font-heading animate-space-gray">
-                        Web3<span style={{ color: "var(--accent-secondary)", fontWeight: 500 }}>Corekit</span>
+                        Web3<span style={{ color: "var(--accent-secondary)", fontWeight: 400 }}>Corekit</span>
                     </h1>
                     <p style={{
                         color: "var(--text-muted)",
-                        fontSize: "1rem",
-                        maxWidth: "500px",
+                        fontSize: "1.05rem",
+                        maxWidth: "600px",
                         margin: "0 auto",
                         lineHeight: 1.5,
-                        opacity: 0.8,
+                        opacity: 0.9,
+                        letterSpacing: "0.01em",
+                        fontWeight: 300,
                     }} className="animate-space-gray">
-                        Industrial-grade modular components for Ethereum applications.
-                        Minimal. Professional.
+                        Web3 modular components for Ethereum applications.
                     </p>
                 </header>
 
