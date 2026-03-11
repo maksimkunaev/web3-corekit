@@ -29,7 +29,7 @@ function DemoPage() {
                         fontWeight: 800,
                         marginBottom: "0.75rem",
                         letterSpacing: "-0.04em",
-                    }} className="font-heading animate-premium">
+                    }} className="font-heading animate-space-gray">
                         Web3<span style={{ color: "var(--accent-secondary)", fontWeight: 500 }}>Corekit</span>
                     </h1>
                     <p style={{
@@ -39,9 +39,9 @@ function DemoPage() {
                         margin: "0 auto",
                         lineHeight: 1.5,
                         opacity: 0.8,
-                    }} className="animate-premium">
+                    }} className="animate-space-gray">
                         Industrial-grade modular components for Ethereum applications.
-                        Minimal. Professional. Premium.
+                        Minimal. Professional.
                     </p>
                 </header>
 
@@ -58,20 +58,20 @@ function DemoPage() {
                         gap: "2.5rem",
                     }}>
                         {/* Module 1: Auth */}
-                        <div className="animate-premium">
+                        <div className="animate-space-gray">
                             <h2 style={sectionLabel}>Identity</h2>
                             <AuthModule />
                         </div>
 
                         {/* Module 3: Balance */}
-                        <div className="animate-premium" style={{ animationDelay: '0.1s' }}>
+                        <div className="animate-space-gray" style={{ animationDelay: '0.1s' }}>
                             <h2 style={sectionLabel}>Asset Ledger</h2>
                             <BalanceCheckModule />
                         </div>
                     </div>
 
                     {/* Module 2: Subscriptions */}
-                    <div className="animate-premium" style={{ animationDelay: '0.2s' }}>
+                    <div className="animate-space-gray" style={{ animationDelay: '0.2s' }}>
                         <h2 style={sectionLabel}>Subscription Engine</h2>
                         <CryptoPaymentModule />
                     </div>
