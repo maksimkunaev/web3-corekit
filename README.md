@@ -1,9 +1,23 @@
 # 🧩 web3-corekit
 
-Modular Web3 backend + frontend toolkit. Each module is **one file** — use any combination.
+The **copy-paste template** for Web3 auth and crypto payments/subscriptions.  
+A modular Corekit with isolated, one-file modules for both **Frontend (Next.js)** and **Backend (FastAPI)**.
 
 ![Dashboard Preview](images/screen.png)
 ![Mobile Preview](images/screen2.png)
+
+## Why use this?
+Building Web3 features from scratch is repetitive. This is a ready-to-use template where core features are isolated into independent modules. **Just copy the file you need and you're live.**
+
+- 🔐 **SIWE Auth**: Standard Sign-In with Ethereum (Reown/WalletConnect).
+- 💳 **Payments**: Automated crypto subscriptions and one-off invoices.
+- ⟠ **Balance Check**: Production-ready ETH network balance verification.
+
+## ⟠ ETH Balance Checking
+The balance module allows you to verify if a user holds a specific ERC-20 token on the Ethereum network.
+1. **Backend**: Uses the Alchemy SDK (`modules/balance_check.py`) to query the blockchain.
+2. **Configuration**: Set your `ALCHEMY_API_KEY` and `TOKEN_CONTRACT_ADDRESS` in `.env`.
+3. **Frontend**: The `BalanceCheckModule.tsx` displays the balance and a "Holder" status badge automatically.
 
 ## Modules
 

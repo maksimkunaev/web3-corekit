@@ -45,7 +45,8 @@ function DemoPage() {
                         letterSpacing: "0.01em",
                         fontWeight: 300,
                     }} className="animate-space-gray">
-                        Web3 modular components for Ethereum applications.
+                        The copy-paste template for Web3 auth and crypto payments. <br />
+                        Isolated modules for Frontend and Backend.
                     </p>
                 </header>
 
