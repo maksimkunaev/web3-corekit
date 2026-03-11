@@ -22,6 +22,7 @@ interface Plan {
     is_popular?: boolean;
     is_base?: boolean;
     per_period_label?: string;
+    min_holder_amount?: number;
 }
 
 // --- Inline styles ---
@@ -138,12 +139,44 @@ const s: Record<string, React.CSSProperties> = {
         color: "var(--text-dim)",
         padding: "4rem",
     },
+    tooltip: {
+        position: "absolute",
+        bottom: "100%",
+        left: "50%",
+        transform: "translateX(-50%)",
+        background: "#1c1c1f",
+        border: "1px solid var(--glass-border)",
+        padding: "0.75rem",
+        borderRadius: "8px",
+        fontSize: "0.75rem",
+        color: "var(--text-muted)",
+        width: "200px",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+        zIndex: 100,
+        marginBottom: "8px",
+        pointerEvents: "none",
+        textAlign: "center",
+        lineHeight: "1.4",
+    },
+    holderInfo: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "6px",
+        fontSize: "0.75rem",
+        color: "var(--accent-primary)",
+        cursor: "pointer",
+        marginTop: "1rem",
+        fontWeight: 600,
+        textDecoration: "underline dotted",
+    },
 };
 
 export default function CryptoPaymentModule() {
     const [plans, setPlans] = useState<Plan[]>([]);
     const [subStatus, setSubStatus] = useState<any>(null);
     const [loading, setLoading] = useState(true);
+    const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
 
     const fetchData = async () => {
         try {
@@ -189,6 +222,7 @@ export default function CryptoPaymentModule() {
         if (plan.id === subStatus?.plan_id && subStatus?.is_active) return "Current Plan";
         if (plan.id === subStatus?.plan_id && subStatus?.status === "PENDING") return "Pending Payment";
         if (plan.is_base) return "Free Plan";
+        if (plan.min_holder_amount) return `Access via Token Hold`;
         return `Upgrade to ${plan.title}`;
     };
 
@@ -228,12 +262,31 @@ export default function CryptoPaymentModule() {
                             </ul>
                             <button
                                 style={{ ...s.btn, ...(isCurrent ? s.btnCurrent : {}) }}
-                                onClick={() => !isCurrent && !plan.is_base && createInvoice(plan.id)}
-                                disabled={isCurrent || plan.is_base}
-                                className={!isCurrent && !plan.is_base ? "btn-accent" : ""}
+                                onClick={() => !isCurrent && !plan.is_base && !plan.min_holder_amount && createInvoice(plan.id)}
+                                disabled={isCurrent || !!plan.is_base || !!plan.min_holder_amount}
+                                className={!isCurrent && !plan.is_base && !plan.min_holder_amount ? "btn-accent" : ""}
                             >
                                 {getButtonText(plan)}
                             </button>
+
+                            {plan.min_holder_amount && (
+                                <div
+                                    style={s.holderInfo}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setActiveTooltip(activeTooltip === plan.id ? null : plan.id);
+                                    }}
+                                >
+                                    <span>Holder Requirements</span>
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+
+                                    {activeTooltip === plan.id && (
+                                        <div style={s.tooltip}>
+                                            Unlock this tier for free by holding at least <strong>{plan.min_holder_amount} tokens</strong> in your wallet.
+                                        </div>
+                                    )}
+                                </div>
+                            )}
                         </div>
                     );
                 })}

@@ -27,6 +27,7 @@ NOWPAYMENTS_IPN_SECRET = os.getenv("NOWPAYMENTS_IPN_SECRET")
 # NOWPAYMENTS_PASSWORD = os.getenv("NOWPAYMENTS_PASSWORD")
 DOMAIN_URL = os.getenv("DOMAIN_URL")
 FE_DOMAIN_URL = os.getenv("FE_DOMAIN_URL")
+MIN_HOLDER_BALANCE = os.getenv("MIN_HOLDER_BALANCE")
 
 pro_per_days = 30
 
@@ -73,6 +74,7 @@ PLANS = {
         ],
         "is_popular": False,
         "per_period_label": "for token holders",
+        "min_holder_amount": MIN_HOLDER_BALANCE,
         "action_text": "Buy Token",
         "action_url": DOMAIN_URL,
     },

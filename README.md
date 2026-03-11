@@ -9,15 +9,15 @@ A modular Corekit with isolated, one-file modules for both **Frontend (Next.js)*
 ## Why use this?
 Building Web3 features from scratch is repetitive. This is a ready-to-use template where core features are isolated into independent modules. **Just copy the file you need and you're live.**
 
-- 🔐 **SIWE Auth**: Standard Sign-In with Ethereum (Reown/WalletConnect).
+- 🔐 **SIWE Auth**: Standard Sign-In with Ethereum. Setup your Project ID in the [Reown Dashboard](https://dashboard.reown.com/).
 - 💳 **Payments**: Automated crypto subscriptions and one-off invoices.
 - ⟠ **Balance Check**: Production-ready ETH network balance verification.
 
-## ⟠ ETH Balance Checking
-The balance module allows you to verify if a user holds a specific ERC-20 token on the Ethereum network.
-1. **Backend**: Uses the Alchemy SDK (`modules/balance_check.py`) to query the blockchain.
-2. **Configuration**: Set your `ALCHEMY_API_KEY` and `TOKEN_CONTRACT_ADDRESS` in `.env`.
-3. **Frontend**: The `BalanceCheckModule.tsx` displays the balance and a "Holder" status badge automatically.
+## 💎 Holders Plan (Token-Gating)
+The toolkit supports **Token-Gated Access**. Instead of paying, users can unlock premium features by holding a specific balance of ERC-20 tokens.
+1. **How it works**: The backend checks the user's wallet balance using Alchemy.
+2. **Implementation**: If `is_holder` returns true, the application can automatically grant a "Holders Tier" without requiring a crypto transaction.
+3. **Use Case**: Reward your community or NFT holders with free access to professional tools.
 
 ## Modules
 
