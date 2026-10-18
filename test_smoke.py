@@ -1,6 +1,6 @@
 # test_smoke.py
 # Smoke tests for all 3 backend modules using FastAPI TestClient
-# Run: cd backend && python -m pytest test_smoke.py -v
+# Run from the repo root: python -m pytest test_smoke.py -v
 
 import sys
 import os

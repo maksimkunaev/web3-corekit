@@ -1,7 +1,7 @@
 # web3-corekit — Deployment Guide
 
 ## 1. Prerequisites
-- **Runtime**: Python 3.10+, Node.js 18+.
+- **Runtime**: Python 3.10+, Node.js 20.9+.
 - **Database**: Uses in-memory mock DB by default.
 
 ## 2. Configuration (`.env`)
@@ -20,7 +20,6 @@ FE_DOMAIN_URL="https://yourdomain.com"
 # --- Payments (NowPayments) ---
 NOWPAYMENTS_API_KEY="your_api_key"
 NOWPAYMENTS_IPN_SECRET="your_ipn_secret_key"
-NOWPAYMENTS_API_PUBLIC_KEY="your_public_key"
 
 # --- Token Balance Requirements ---
 ALCHEMY_KEY="your_alchemy_key"

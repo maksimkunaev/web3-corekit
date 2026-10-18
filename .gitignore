@@ -3,6 +3,7 @@ node_modules/
 .next/
 out/
 build/
+*.tsbuildinfo
 .env
 .env.local
 
@@ -13,11 +14,11 @@ __pycache__/
 .venv/
 venv/
 ENV/
-.env
+.pytest_cache/
 
 # Logs
 logs/
-*.json
+*.log
 
 # IDE
 .vscode/
